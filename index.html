@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Accurate Particles</title>
+  <title>Neon Particles with Blur</title>
   <style>
     * {
       margin: 0;
@@ -12,10 +12,8 @@
     }
 
     body {
+      background: #000;
       overflow: hidden;
-      background: #0f172a;
-      font-family: "Poppins", sans-serif;
-      color: white;
     }
 
     canvas {
@@ -24,30 +22,28 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: -2;
     }
 
-    .content {
-      position: relative;
-      z-index: 10;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
+    /* 🔥 Frosted blur overlay */
+    .blur-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(2px);
+      background: rgba(0, 0, 0, 0.2);
+      z-index: -1;
     }
   </style>
 </head>
 <body>
   <canvas id="bg"></canvas>
-
-  <div class="content">
-    <h1>Perfect Portfolio Particles</h1>
-    <p>Now with soft attraction to the cursor</p>
-  </div>
+  <div class="blur-overlay"></div>
 
   <script>
+    // ------------------ PARTICLE BACKGROUND ------------------
     const canvas = document.getElementById("bg");
     const ctx = canvas.getContext("2d");
 
@@ -70,9 +66,9 @@
     });
 
     const numParticles = 120;
-    const connectDist = 130;
-    const attractRadius = 100; // only close ones get pulled
-    const attractStrength = 0.03; // how fast they move toward cursor
+    const connectDist = 120;
+    const attractRadius = 100;
+    const attractStrength = 0.03;
 
     let particles = [];
 
@@ -88,19 +84,14 @@
       move() {
         this.x += this.vx;
         this.y += this.vy;
-
-        // bounce edges
         if (this.x < 0 || this.x > width) this.vx *= -1;
         if (this.y < 0 || this.y > height) this.vy *= -1;
 
-        // soft attraction (subtle magnetic effect)
         if (mouse.x && mouse.y) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-
           if (dist < attractRadius) {
-            // move slightly toward mouse
             this.x += dx * attractStrength * (1 - dist / attractRadius);
             this.y += dy * attractStrength * (1 - dist / attractRadius);
           }
@@ -110,16 +101,16 @@
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255,255,255,0.9)";
+        ctx.fillStyle = "rgba(0,255,136,0.9)";
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = "#00ff88";
         ctx.fill();
       }
     }
 
     function init() {
       particles = [];
-      for (let i = 0; i < numParticles; i++) {
-        particles.push(new Particle());
-      }
+      for (let i = 0; i < numParticles; i++) particles.push(new Particle());
     }
 
     function connect() {
@@ -132,7 +123,7 @@
           if (dist < connectDist) {
             const opacity = 1 - dist / connectDist;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255,255,255,${opacity * 0.4})`;
+            ctx.strokeStyle = `rgba(0,255,136,${opacity * 0.4})`;
             ctx.lineWidth = 1;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -140,7 +131,6 @@
           }
         }
 
-        // mouse connections
         if (mouse.x !== null && mouse.y !== null) {
           const dx = mouse.x - particles[i].x;
           const dy = mouse.y - particles[i].y;
@@ -149,7 +139,7 @@
           if (dist < connectDist) {
             const opacity = 1 - dist / connectDist;
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255,255,255,${opacity * 0.6})`;
+            ctx.strokeStyle = `rgba(0,255,136,${opacity * 0.6})`;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
