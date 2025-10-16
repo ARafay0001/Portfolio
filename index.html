@@ -25,14 +25,14 @@
       z-index: -2;
     }
 
-    /* 🔥 Frosted blur overlay */
+    /* 🔮 Frosted blur overlay */
     .blur-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(1.5px);
       background: rgba(0, 0, 0, 0.2);
       z-index: -1;
     }
@@ -47,8 +47,14 @@
     const canvas = document.getElementById("bg");
     const ctx = canvas.getContext("2d");
 
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    let width, height;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth || document.documentElement.clientWidth;
+      height = canvas.height = window.innerHeight || document.documentElement.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
     const mouse = { x: null, y: null };
     window.addEventListener("mousemove", (e) => {
@@ -59,14 +65,10 @@
       mouse.x = null;
       mouse.y = null;
     });
-    window.addEventListener("resize", () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      init();
-    });
 
-    const numParticles = 120;
-    const connectDist = 120;
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    const numParticles = isMobile ? 50 : 80;
+    const connectDist = 100;
     const attractRadius = 100;
     const attractStrength = 0.03;
 
@@ -84,9 +86,12 @@
       move() {
         this.x += this.vx;
         this.y += this.vy;
+
+        // bounce edges
         if (this.x < 0 || this.x > width) this.vx *= -1;
         if (this.y < 0 || this.y > height) this.vy *= -1;
 
+        // soft attraction
         if (mouse.x && mouse.y) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
@@ -102,7 +107,7 @@
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(0,255,136,0.9)";
-        ctx.shadowBlur = 15;
+        ctx.shadowBlur = isMobile ? 5 : 15;
         ctx.shadowColor = "#00ff88";
         ctx.fill();
       }
@@ -130,21 +135,6 @@
             ctx.stroke();
           }
         }
-
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = mouse.x - particles[i].x;
-          const dy = mouse.y - particles[i].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < connectDist) {
-            const opacity = 1 - dist / connectDist;
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(0,255,136,${opacity * 0.6})`;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-          }
-        }
       }
     }
 
@@ -158,8 +148,10 @@
       requestAnimationFrame(animate);
     }
 
-    init();
-    animate();
+    window.onload = () => {
+      init();
+      animate();
+    };
   </script>
 </body>
 </html>
