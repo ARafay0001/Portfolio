@@ -192,6 +192,11 @@
       margin-top: 2rem;
     }
 
+    .projects a {
+      color: white;
+      text-decoration: none;
+    }
+
     .project-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(0, 255, 136, 0.2);
@@ -199,6 +204,14 @@
       padding: 2rem;
       backdrop-filter: blur(6px);
       transition: 0.3s;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .project-card:hover {
@@ -212,10 +225,19 @@
       color: #00ff88;
     }
 
-    .contact p {
+    /* ----------------- CONTACT SECTION ----------------- */
+    #contact p {
       max-width: 600px;
       margin: 1rem auto;
       color: #e2e8f0;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
     }
 
     footer {
@@ -255,7 +277,7 @@
   <!-- HERO SECTION -->
   <header>
     <h1>Hi, I'm Abdul Rafay</h1>
-    <h2>Front-End Developer</h2>
+    <h2>Front-End Developer | Aspiring Full Stack Developer</h2>
     <p>I build responsive, interactive, and creative websites using modern web technologies. Passionate about design, performance, and user experience.</p>
     <a href="#projects" class="btn">View My Work</a>
   </header>
@@ -264,28 +286,36 @@
   <section id="about">
     <h2 class="section-title">About Me</h2>
     <p>
-      I'm a self-taught front-end developer with a passion for creating beautiful and functional web applications. 
-      I’ve completed <strong>Algebra I on Khan Academy</strong> and currently learning <strong>Responsive Web Design</strong> at freeCodeCamp. 
-      I love coding, design, and solving problems creatively.
-    </p>
+    <strong>Frontend Developer</strong> skilled in <strong>HTML, CSS, JavaScript, and Git</strong>, currently learning <strong>React</strong> and aiming to become a <strong>Full Stack Developer</strong>.  
+    Alongside development, I also have experience in <strong>graphic design</strong>, allowing me to blend creativity with clean, functional code.  
+    <br><br>
+    I'm currently working in the <strong>Government Defence sector</strong> as an <strong>IT & Cybersecurity Support</strong> professional, while pursuing my <strong>BSCS</strong> degree from <strong>Ilma University</strong>.  
+    Passionate about tech, security, and design — always eager to learn, build, and grow.
+  </p>
   </section>
 
   <!-- PROJECTS SECTION -->
   <section id="projects">
     <h2 class="section-title">Projects</h2>
+
     <div class="projects">
-      <div class="project-card">
-        <h3>🎲 Dice Roller App</h3>
-        <p>A fun and interactive dice roller made with React.</p>
-      </div>
-      <div class="project-card">
-        <h3>🎨 Meme Fetcher</h3>
-        <p>A simple meme generator app using Meme API and JavaScript.</p>
-      </div>
-      <div class="project-card">
-        <h3>🌐 Responsive Grid Layout</h3>
-        <p>A responsive CSS Grid layout built for my freeCodeCamp project.</p>
-      </div>
+      <a href="https://arafay0001.github.io/Js-Quizz/" target="_blank" class="project-card">
+        <img src="./assets/quizzApp.png" alt="JS Quiz App Preview">
+        <h3>🧠 JS Quiz App</h3>
+        <p>Missed my JavaScript quizzes from SMIT, so I built one myself! A fun web app where you can test your JS knowledge with interactive questions and instant feedback — built with pure HTML, CSS, and JavaScript.</p>
+      </a>
+
+      <a href="https://arafay0001.github.io/Wood-Product-Servicing-web/" target="_blank" class="project-card">
+        <img src="./assets/solidWood.png" alt="Solid Wood Preview">
+        <h3>💻 Solid Wood</h3>
+        <p>Not the first hackathon… but definitely not the last! A creative attempt to build and learn under pressure — gaining hands-on experience, teamwork skills, and caffeine-fueled debugging energy.</p>
+      </a>
+
+      <a href="https://arafay0001.github.io/BLog-web/" target="_blank" class="project-card">
+        <img src="./assets/Blog-Web.png" alt="Blog Web Preview">
+        <h3>📝 Blog Web</h3>
+        <p>A pseudo blog platform where users can sign up, log in, and upload blog posts using local storage. It simulates real blog functionality with user authentication and content management — built with HTML, CSS, and JavaScript.</p>
+      </a>
     </div>
   </section>
 
@@ -293,11 +323,16 @@
   <section id="contact">
     <h2 class="section-title">Get in Touch</h2>
     <p>If you'd like to collaborate, have a question, or just say hi, feel free to reach out!</p>
-    <a href="mailto:abdulrafay@example.com" class="btn">Email Me</a>
+
+    <div class="contact-links">
+      <a href="mailto:abdulrafayimran4@gmail.com" class="btn">📧 Email Me</a>
+      <a href="https://github.com/ARafay0001" target="_blank" class="btn">💻 GitHub</a>
+      <a href="https://www.linkedin.com/in/abdul-rafay-imran0001" target="_blank" class="btn">🔗 LinkedIn</a>
+    </div>
   </section>
 
   <footer>
-    © 2025 Abdul Rafay. All rights reserved.
+    “Building ideas into reality, one line of code at a time.”.
   </footer>
 </body>
 </html>
