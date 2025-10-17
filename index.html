@@ -3,266 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Abdul Rafay | Portfolio</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      overflow-x: hidden;
-      background: #000;
-      font-family: "Poppins", sans-serif;
-      color: white;
-    }
-
-    /* ----------------- NAVBAR ----------------- */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 1rem 3rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.2);
-      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
-      box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
-      transition: 0.3s ease;
-    }
-
-    nav:hover {
-      background: rgba(0, 0, 0, 0.4);
-      border-bottom: 1px solid rgba(0, 255, 136, 0.4);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav ul li a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-      transition: color 0.3s;
-    }
-
-    nav ul li a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 0;
-      height: 2px;
-      background: #00ff88;
-      transition: width 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #00ff88;
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-
-    /* ----------------- HERO SECTION ----------------- */
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      padding: 2rem;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #008f77, #003524, #000c0a);
-      background-size: 300% 300%;
-      animation: gradientMove 8s ease infinite;
-      z-index: -1;
-      opacity: 0.8;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: #00ff88;
-      margin-bottom: 0.5rem;
-      animation: fadeInUp 1s ease forwards;
-      text-shadow: 0 0 20px #00ff88;
-    }
-
-    header h2 {
-      font-size: 1.5rem;
-      color: #94a3b8;
-      margin-bottom: 1.5rem;
-      animation: fadeInUp 1.5s ease forwards;
-    }
-
-    header p {
-      max-width: 600px;
-      color: #e2e8f0;
-      margin-bottom: 2rem;
-      animation: fadeInUp 2s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 1.8rem;
-      background: transparent;
-      border: 2px solid #00ff88;
-      color: #00ff88;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn:hover {
-      color: #000;
-      background: #00ff88;
-      box-shadow: 0 0 20px #00ff88;
-      transform: scale(1.05);
-    }
-
-    /* ----------------- SECTIONS ----------------- */
-    section {
-      padding: 6rem 10%;
-      text-align: center;
-      position: relative;
-    }
-
-    section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      border-radius: 1rem;
-      z-index: -1;
-      margin: 2rem;
-    }
-
-    h2.section-title {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #00ff88;
-      text-shadow: 0 0 10px #00ff8857;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .projects a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .project-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 136, 0.2);
-      border-radius: 1rem;
-      padding: 2rem;
-      backdrop-filter: blur(6px);
-      transition: 0.3s;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      background: rgba(0, 255, 136, 0.1);
-      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-    }
-
-    .project-card h3 {
-      margin-bottom: 1rem;
-      color: #00ff88;
-    }
-
-    /* ----------------- CONTACT SECTION ----------------- */
-    #contact p {
-      max-width: 600px;
-      margin: 1rem auto;
-      color: #e2e8f0;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem;
-      }
-      nav ul {
-        gap: 1rem;
-      }
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header h2 {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
 </head>
 <body>
   <!-- NAVBAR -->
@@ -301,19 +48,19 @@
     <div class="projects">
       <a href="https://arafay0001.github.io/Js-Quizz/" target="_blank" class="project-card">
         <img src="./assets/quizzApp.png" alt="JS Quiz App Preview">
-        <h3>🧠 JS Quiz App</h3>
+        <h3>JS Quiz App</h3>
         <p>Missed my JavaScript quizzes from SMIT, so I built one myself! A fun web app where you can test your JS knowledge with interactive questions and instant feedback — built with pure HTML, CSS, and JavaScript.</p>
       </a>
 
       <a href="https://arafay0001.github.io/Wood-Product-Servicing-web/" target="_blank" class="project-card">
         <img src="./assets/solidWood.png" alt="Solid Wood Preview">
-        <h3>💻 Solid Wood</h3>
+        <h3>Solid Wood</h3>
         <p>Not the first hackathon… but definitely not the last! A creative attempt to build and learn under pressure — gaining hands-on experience, teamwork skills, and caffeine-fueled debugging energy.</p>
       </a>
 
       <a href="https://arafay0001.github.io/BLog-web/" target="_blank" class="project-card">
         <img src="./assets/Blog-Web.png" alt="Blog Web Preview">
-        <h3>📝 Blog Web</h3>
+        <h3>Blog Web</h3>
         <p>A pseudo blog platform where users can sign up, log in, and upload blog posts using local storage. It simulates real blog functionality with user authentication and content management — built with HTML, CSS, and JavaScript.</p>
       </a>
     </div>
@@ -321,18 +68,28 @@
 
   <!-- CONTACT SECTION -->
   <section id="contact">
-    <h2 class="section-title">Get in Touch</h2>
-    <p>If you'd like to collaborate, have a question, or just say hi, feel free to reach out!</p>
+  <h2 class="section-title">Get in Touch</h2>
+  <p>If you'd like to collaborate, have a question, or just say hi, feel free to reach out!</p>
 
-    <div class="contact-links">
-      <a href="mailto:abdulrafayimran4@gmail.com" class="btn">📧 Email Me</a>
-      <a href="https://github.com/ARafay0001" target="_blank" class="btn">💻 GitHub</a>
-      <a href="https://www.linkedin.com/in/abdul-rafay-imran0001" target="_blank" class="btn">🔗 LinkedIn</a>
-    </div>
-  </section>
+  <div class="contact-links">
+    <a href="https://github.com/ARafay0001" target="_blank" class="btn">💻 GitHub</a>
+    <a href="https://www.linkedin.com/in/abdul-rafay-imran0001" target="_blank" class="btn">🔗 LinkedIn</a>
+    <a  href="https://wa.me/923253583010" target="_blank" class="btn">💬 Whatapp</a>
+  </div>
+
+  <p style="margin-top: 20px;">
+    <!-- <strong>Phone:</strong> 0325-3583010 &nbsp; | &nbsp; -->
+    <strong>Email:</strong> <a href="mailto:abdulrafayimran4@gmail.com" style="color:#00ff88; text-decoration:none;">abdulrafayimran4@gmail.com</a>
+  </p>
+</section>
+
 
   <footer>
     “Building ideas into reality, one line of code at a time.”.
   </footer>
+
+  <!-- Particle Background -->
+  <canvas id="bg"></canvas>
+
 </body>
 </html>
