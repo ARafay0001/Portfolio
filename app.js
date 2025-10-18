@@ -1,4 +1,4 @@
-// ⚡ Neon Particles with Cursor Interaction
+
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 let width, height;

@@ -106,6 +106,7 @@ header h1 {
     margin-bottom: 0.5rem;
     animation: fadeInUp 1s ease forwards;
     text-shadow: 0 0 20px #00ff88;
+    user-select: none;
 }
 
 header h2 {
@@ -177,6 +178,7 @@ h2.section-title {
     margin-bottom: 2rem;
     color: #00ff88;
     text-shadow: 0 0 10px #00ff8857;
+    user-select: none;
 }
 
 .projects {
@@ -268,8 +270,9 @@ footer {
 
     body {
     background: #000;
-    overflow-x: hidden; /* prevent horizontal scroll only */
-        }
+    overflow-x: hidden;
+    }
+
     canvas {
         position: fixed;
         top: 0;
@@ -278,4 +281,43 @@ footer {
         height: 100%;
         z-index: -1;
     }
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 999px;
+    flex-wrap: wrap;
+}
+.skillcard {
+    width: 60px;
+    text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+    
+}
 
+.skillcard:hover {
+    transform: scale(1.5);
+}
+.skillcard img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease;
+}
+
+.email {
+    transition: transform 0.2s ease;
+}
+.email:hover {
+    transform: scale(1.2);
+}
+
+.about-text {
+    transition: transform 0.5s ease;
+}
+.about-text:hover {
+    transform: scale(1.1);
+}
