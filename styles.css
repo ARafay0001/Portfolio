@@ -87,7 +87,7 @@ header::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #008f77, #003524, #000c0a00);
+    background: linear-gradient(135deg, #008f7700, #006948, #000c0a00);
     background-size: 300% 300%;
     animation: gradientMove 8s ease infinite;
     z-index: -1;
