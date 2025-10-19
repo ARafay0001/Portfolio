@@ -1,127 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>Abdul Rafay | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Abdul Rafay | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-  <!-- HERO SECTION -->
-  <header>
-    <h1>Hi, I'm Abdul Rafay</h1>
-    <h2>Front-End Developer | Aspiring Full Stack Developer</h2>
-    <p>I build responsive, interactive, and creative websites using modern web technologies. Passionate about design, performance, and user experience.</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </header>
+    <!-- HERO SECTION -->
+    <header>
+      <h1>Hi, I'm Abdul Rafay</h1>
+      <h2>Front-End Developer | Aspiring Full Stack Developer</h2>
+      <p>
+        I build responsive, interactive, and creative websites using modern web
+        technologies. Passionate about design, performance, and user experience.
+      </p>
+      <a href="#projects" class="btn">View My Work</a>
+    </header>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p class="about-text">
-    <strong>Frontend Developer</strong> skilled in <strong>HTML, CSS, JavaScript, and Git</strong>, currently learning <strong>React</strong> and aiming to become a <strong>Full Stack Developer</strong>.  
-    Alongside development, I also have experience in <strong>graphic design</strong>, allowing me to blend creativity with clean, functional code.  
-    <br><br>
-    I'm currently working in the <strong>Government Defence sector</strong> as an <strong>IT & Cybersecurity Support</strong> professional, while pursuing my <strong>BSCS</strong> degree from <strong>Ilma University</strong>.  
-    Passionate about tech, security, and design — always eager to learn, build, and grow.
-  </p>
-  </section>
+    <div class="main">
+      <!-- ABOUT SECTION -->
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+          <strong>Frontend Developer</strong> skilled in
+          <strong>HTML, CSS, JavaScript, and Git</strong>, currently learning
+          <strong>React</strong> and aiming to become a
+          <strong>Full Stack Developer</strong>. Alongside development, I also
+          have experience in <strong>graphic design</strong>, allowing me to
+          blend creativity with clean, functional code. <br /><br />
+          I'm currently working in the
+          <strong>Government Defence sector</strong> as an
+          <strong>IT & Cybersecurity Support</strong> professional, while
+          pursuing my <strong>BSCS</strong> degree from
+          <strong>Ilma University</strong>. Passionate about tech, security, and
+          design — always eager to learn, build, and grow.
+        </p>
+      </section>
 
-  <!-- SKILLS SECTION -->
-    <section id="skills" >
-    <h2 class="section-title">Skills</h2>
-    <div class="skills">
-      <div title="HTML5" class="skillcard">
-      <img src="./assets/logo/html.png" alt="">
-      <p>HTML</p>
+      <!-- SKILLS SECTION -->
+      <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+          <div title="HTML5" class="skillcard">
+            <img src="./assets/logo/html.png" alt="" />
+            <p>HTML</p>
+          </div>
+          <div title="CSS" class="skillcard">
+            <img src="./assets/logo/css.png" alt="" />
+            <p>CSS</p>
+          </div>
+          <div title="JavaScript" class="skillcard">
+            <img src="./assets/logo/js.png" alt="" />
+            <p>JavaScript</p>
+          </div>
+          <div title="Git & GitHub" class="skillcard">
+            <img src="./assets/logo/git.png" alt="" />
+            <p>Github</p>
+          </div>
+          <div title="React" class="skillcard">
+            <img src="./assets/logo/react.png" alt="" />
+            <p>React</p>
+          </div>
+          <div title="Node.js" class="skillcard">
+            <img src="./assets/logo/node.png" alt="" />
+            <p>Node.js</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+          <a
+            href="https://arafay0001.github.io/Js-Quizz/"
+            target="_blank"
+            class="project-card"
+          >
+            <img src="./assets/quizzApp.png" alt="JS Quiz App Preview" />
+            <h3>JS Quiz App</h3>
+            <p>
+              Missed my JavaScript quizzes from SMIT, so I built one myself! A
+              fun web app where you can test your JS knowledge with interactive
+              questions and instant feedback — built with pure HTML, CSS, and
+              JavaScript.
+            </p>
+          </a>
+
+          <a
+            href="https://arafay0001.github.io/Wood-Product-Servicing-web/"
+            target="_blank"
+            class="project-card"
+          >
+            <img src="./assets/solidWood.png" alt="Solid Wood Preview" />
+            <h3>Solid Wood</h3>
+            <p>
+              Not the first hackathon… but definitely not the last! A creative
+              attempt to build and learn under pressure — gaining hands-on
+              experience, teamwork skills, and caffeine-fueled debugging energy.
+            </p>
+          </a>
+
+          <a
+            href="https://arafay0001.github.io/BLog-web/"
+            target="_blank"
+            class="project-card"
+          >
+            <img src="./assets/Blog-Web.png" alt="Blog Web Preview" />
+            <h3>Blog Web</h3>
+            <p>
+              A pseudo blog platform where users can sign up, log in, and upload
+              blog posts using local storage. It simulates real blog
+              functionality with user authentication and content management —
+              built with HTML, CSS, and JavaScript.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p>
+          If you'd like to collaborate, have a question, or just say hi, feel
+          free to reach out!
+        </p>
+
+        <div class="contact-links">
+          <a href="https://github.com/ARafay0001" target="_blank" class="btn"
+            >💻 GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/abdul-rafay-imran0001"
+            target="_blank"
+            class="btn"
+            >🔗 LinkedIn</a
+          >
+          <a href="https://wa.me/923253583010" target="_blank" class="btn"
+            >💬 What'sapp</a
+          >
+        </div>
+
+        <p class="email" style="margin-top: 20px">
+          <strong>Email:</strong>
+          <a
+            href="mailto:abdulrafayimran4@gmail.com"
+            style="color: #00ff88; text-decoration: none"
+            >abdulrafayimran4@gmail.com</a
+          >
+        </p>
+      </section>
     </div>
-    <div title="CSS" class="skillcard">
-      <img src="./assets/logo/css.png" alt="">
-      <p>CSS</p>
-    </div>
-    <div title="JavaScript" class="skillcard">
-      <img src="./assets/logo/js.png" alt="">
-      <p>JavaScript</p>
-    </div>
-    <div title="Git & GitHub" class="skillcard">
-      <img src="./assets/logo/git.png" alt="">
-      <p>Github</p>
-    </div>
-    <div title="React" class="skillcard">
-      <img src="./assets/logo/react.png" alt="">
-      <p>React</p>
-    </div>
-    <div title="Node.js" class="skillcard">
-      <img src="./assets/logo/node.png" alt="">
-      <p>Node.js</p>
-    </div>
-    </div>
-  </section>
 
-  <!-- PROJECTS SECTION -->
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
+    <footer>“Building ideas into reality, one line of code at a time.”.</footer>
 
-    <div class="projects">
-      <a href="https://arafay0001.github.io/Js-Quizz/" target="_blank" class="project-card">
-        <img src="./assets/quizzApp.png" alt="JS Quiz App Preview">
-        <h3>JS Quiz App</h3>
-        <p>Missed my JavaScript quizzes from SMIT, so I built one myself! A fun web app where you can test your JS knowledge with interactive questions and instant feedback — built with pure HTML, CSS, and JavaScript.</p>
-      </a>
-
-      <a href="https://arafay0001.github.io/Wood-Product-Servicing-web/" target="_blank" class="project-card">
-        <img src="./assets/solidWood.png" alt="Solid Wood Preview">
-        <h3>Solid Wood</h3>
-        <p>Not the first hackathon… but definitely not the last! A creative attempt to build and learn under pressure — gaining hands-on experience, teamwork skills, and caffeine-fueled debugging energy.</p>
-      </a>
-
-      <a href="https://arafay0001.github.io/BLog-web/" target="_blank" class="project-card">
-        <img src="./assets/Blog-Web.png" alt="Blog Web Preview">
-        <h3>Blog Web</h3>
-        <p>A pseudo blog platform where users can sign up, log in, and upload blog posts using local storage. It simulates real blog functionality with user authentication and content management — built with HTML, CSS, and JavaScript.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-  <h2 class="section-title">Get in Touch</h2>
-  <p>If you'd like to collaborate, have a question, or just say hi, feel free to reach out!</p>
-
-  <div class="contact-links">
-    <a href="https://github.com/ARafay0001" target="_blank" class="btn">💻 GitHub</a>
-    <a href="https://www.linkedin.com/in/abdul-rafay-imran0001" target="_blank" class="btn">🔗 LinkedIn</a>
-    <a  href="https://wa.me/923253583010" target="_blank" class="btn">💬 What'sapp</a>
-  </div>
-
-  <p class="email" style="margin-top: 20px;">
-  
-    <strong>Email:</strong> <a href="mailto:abdulrafayimran4@gmail.com" style="color:#00ff88; text-decoration:none;">abdulrafayimran4@gmail.com</a>
-  </p>
-</section>
-
-
-  <footer>
-    “Building ideas into reality, one line of code at a time.”.
-  </footer>
-
-  <!-- Particle Background -->
-  <canvas id="bg"></canvas>
-
-</body>
+    <!-- Particle Background -->
+    <canvas id="bg"></canvas>
+  </body>
 </html>
