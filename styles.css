@@ -289,7 +289,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 20px;
-    max-width: 999px;
+    /* max-width: 999px; */
     flex-wrap: wrap;
 }
 .skillcard {
