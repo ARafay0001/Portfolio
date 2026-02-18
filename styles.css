@@ -329,9 +329,9 @@ footer {
 
 .resume {
   position: fixed;
-  top: 90vh;         /* distance from top */
-  right: 20px;       /* distance from right */
-  z-index: 9999;     /* ensures it stays above everything */
+  top: 90vh;         
+  right: 20px;       
+  z-index: 9999;     
 
   padding: 10px 20px;
   border-radius: 8px;
