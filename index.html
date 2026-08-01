@@ -1,8 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Abdul Rafay — Front-End / MERN developer and IT & Cybersecurity Support professional. Portfolio of React and JavaScript projects."
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -10,78 +15,142 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
     <title>Abdul Rafay | Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
+    <!-- cursor -->
+    <div class="cursor-crosshair" id="cursorCrosshair" aria-hidden="true">
+      <span class="bar h"></span>
+      <span class="bar v"></span>
+      <span class="dot"></span>
+    </div>
+
+    <a class="skip-link" href="#about">Skip to content</a>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- NAVBAR -->
     <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="#" class="logo">AR<span>.</span></a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul id="navMenu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- HERO SECTION -->
     <header>
-      <h1>Hi, I'm Abdul Rafay</h1>
-      <h2>Front-End Developer | Aspiring Full Stack Developer</h2>
-      <p>
+      <p class="eyebrow">$ whoami</p>
+      <h1>Abdul Rafay</h1>
+      <h2>
+        <span id="typewriter" class="typewriter"></span
+        ><span class="cursor" aria-hidden="true"></span>
+      </h2>
+      <p class="lede">
         I build responsive, interactive, and creative websites using modern web
         technologies. Passionate about design, performance, and user experience.
       </p>
-      <a href="#projects" class="btn">View My Work</a>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to content"
+        ><span></span
+      ></a>
     </header>
 
-    <div class="main">
+    <main class="main">
       <!-- ABOUT SECTION -->
       <section id="about">
+        <p class="eyebrow">$ about</p>
         <h2 class="section-title">About Me</h2>
-        <p class="about-text">
-         <strong>MERN Stack Developer</strong> skilled in <strong>HTML, CSS, Tailwind CSS, JavaScript, React, Node.js, Express.js, and MongoDB</strong>.
-Passionate about building responsive, user-friendly, and scalable web applications with clean, maintainable code. Alongside development, I also have experience in <strong>graphic design</strong>, allowing me to blend creativity with modern UI/UX principles and functional development. I enjoy continuously learning new technologies and creating high-quality digital experiences.
- <br /><br />
-          I'm currently working in the
-          <strong>Government Defence sector</strong> as an
-          <strong>IT & Cybersecurity Support</strong> professional, while
-          pursuing my <strong>BSCS</strong> degree from
-          <strong>Ilma University</strong>. Passionate about tech, security, and
-          design — always eager to learn, build, and grow.
-        </p>
+
+        <div class="about-grid">
+          <p class="about-text">
+            <strong>MERN Stack Developer</strong> skilled in
+            <strong
+              >HTML, CSS, Tailwind CSS, JavaScript, React, Node.js, Express.js,
+              and MongoDB</strong
+            >. Passionate about building responsive, user-friendly, and scalable
+            web applications with clean, maintainable code. Alongside
+            development, I also have experience in
+            <strong>graphic design</strong>, allowing me to blend creativity
+            with modern UI/UX principles and functional development. I enjoy
+            continuously learning new technologies and creating high-quality
+            digital experiences.
+          </p>
+
+          <div class="about-meta">
+            <div class="meta-card">
+              <span class="meta-label">Currently</span>
+              <span class="meta-value"
+                >IT &amp; Cybersecurity Support — Government Defence
+                Sector</span
+              >
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Studying</span>
+              <span class="meta-value">BSCS, Ilma University</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Focus</span>
+              <span class="meta-value">MERN Stack &amp; UI/UX</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- SKILLS SECTION -->
-      <section id="skills">
+      <section  id="skills">
+        <p class="eyebrow">$ skills</p>
         <h2 class="section-title">Skills</h2>
         <div class="skills">
           <div title="HTML5" class="skillcard">
-            <img src="./assets/logo/html.png" alt="html.png" />
+            <img src="./assets/logo/html.png" alt="HTML5" loading="lazy" />
             <p>HTML</p>
           </div>
           <div title="CSS" class="skillcard">
-            <img src="./assets/logo/css.png" alt="css.png" />
+            <img src="./assets/logo/css.png" alt="CSS" loading="lazy" />
             <p>CSS</p>
           </div>
           <div title="Tailwind" class="skillcard">
-            <img src="./assets/logo/tailwind.png" alt="tailwind.png" />
+            <img
+              src="./assets/logo/tailwind.png"
+              alt="Tailwind CSS"
+              loading="lazy"
+            />
             <p>Tailwind</p>
           </div>
           <div title="JavaScript" class="skillcard">
-            <img src="./assets/logo/js.png" alt="js.png" />
+            <img src="./assets/logo/js.png" alt="JavaScript" loading="lazy" />
             <p>JavaScript</p>
           </div>
           <div title="React" class="skillcard">
-            <img src="./assets/logo/react.png" alt="react.png" />
+            <img src="./assets/logo/react.png" alt="React" loading="lazy" />
             <p>React</p>
           </div>
           <div title="Node.js" class="skillcard">
-            <img src="./assets/logo/node.png" alt="node.png" />
+            <img src="./assets/logo/node.png" alt="Node.js" loading="lazy" />
             <p>Node.js</p>
           </div>
         </div>
@@ -89,107 +158,152 @@ Passionate about building responsive, user-friendly, and scalable web applicatio
 
       <!-- PROJECTS SECTION -->
       <section id="projects">
+        <p class="eyebrow">$ projects</p>
         <h2 class="section-title">Projects</h2>
 
         <div class="projects">
-           <a
+          <a
             href="https://freeqrify.vercel.app/"
             target="_blank"
-            class="project-card project-card-shaky"
+            rel="noopener"
+            class="project-card"
           >
-            <img src="./assets/qrify.png" alt="Shopo Preview" />
+            <img src="./assets/qrify.png" alt="QRify preview" loading="lazy" />
             <h3>QRify</h3>
             <p>
-            A React-based QR Code Generator featuring multiple QR types, customizable designs, logo embedding, and instant downloads in PNG, JPEG, SVG, and PDF formats. Built with React and Tailwind CSS, it demonstrates responsive UI design, reusable components, and a clean, user-focused architecture.  </p>
+              A React-based QR Code Generator featuring multiple QR types,
+              customizable designs, logo embedding, and instant downloads in
+              PNG, JPEG, SVG, and PDF formats. Built with React and Tailwind
+              CSS.
+            </p>
           </a>
+
           <a
             href="https://shopo-e-commerce.netlify.app/"
             target="_blank"
-            class="project-card project-card-shaky"
+            rel="noopener"
+            class="project-card"
           >
-            <img src="./assets/shopo.png" alt="Shopo Preview" />
+            <img
+              src="./assets/shopo.png"
+              alt="E-Shopo preview"
+              loading="lazy"
+            />
             <h3>E-Shopo</h3>
             <p>
-             React based e-commerce website featuring dynamic product listings, responsive layouts, and seamless navigation. Built with React and CSS, it demonstrates practical implementation of shopping cart functionality, reusable components, and a clean user-focused UI architecture.
+              A React e-commerce site with dynamic product listings, responsive
+              layouts, and seamless navigation. Demonstrates cart functionality
+              and reusable components.
             </p>
           </a>
+
           <a
             href="https://k72react.netlify.app/"
             target="_blank"
-            class="project-card project-card-shaky"
+            rel="noopener"
+            class="project-card"
           >
-            <img src="./assets/k72.png" alt="k72 Preview" />
+            <img src="./assets/k72.png" alt="k-72 preview" loading="lazy" />
             <h3>k-72</h3>
             <p>
-              An interactive React website showcasing GSAP animations, smooth scrolling, and responsive layouts. Built with React and CSS, it’s a playground for practicing dynamic UI interactions and animations.
+              An interactive React site showcasing GSAP animations, smooth
+              scrolling, and responsive layouts — a playground for dynamic UI
+              interactions.
             </p>
           </a>
+
           <a
             href="https://arafay0001.github.io/Js-Quizz/"
             target="_blank"
+            rel="noopener"
             class="project-card"
           >
-            <img src="./assets/quizzApp.png" alt="JS Quiz App Preview" />
+            <img
+              src="./assets/quizzApp.png"
+              alt="JS Quiz App preview"
+              loading="lazy"
+            />
             <h3>JS Quiz App</h3>
             <p>
-              Missed my JavaScript quizzes from SMIT, so I built one myself! A
-              fun web app where you can test your JS knowledge with interactive
-              questions and instant feedback — built with pure HTML, CSS, and
-              JavaScript.
+              Missed my JavaScript quizzes from SMIT, so I built one myself —
+              interactive questions and instant feedback, built with pure HTML,
+              CSS, and JavaScript.
             </p>
           </a>
 
           <a
             href="https://arafay0001.github.io/jadoo-travel/"
             target="_blank"
+            rel="noopener"
             class="project-card"
           >
-            <img src="./assets/jadoo travel.png" alt="jadoo-travel Preview" />
+            <img
+              src="./assets/jadoo travel.png"
+              alt="Solid Wood travel site preview"
+              loading="lazy"
+            />
             <h3>Solid Wood</h3>
             <p>
-              A responsive travel website showcasing destinations, travel
-              packages, and deals. It features a modern UI, smooth layout, and
-              mobile-friendly design — built with HTML, CSS, and JavaScript.
+              A responsive travel site showcasing destinations, packages, and
+              deals — modern UI and a mobile-friendly layout built with HTML,
+              CSS, and JavaScript.
             </p>
           </a>
+
           <a
             href="https://syed-ammar-gfx-designer.netlify.app/"
             target="_blank"
+            rel="noopener"
             class="project-card"
           >
-            <img src="./assets/gfx-portfolio.png" alt="gfx-portfolio Preview" />
+            <img
+              src="./assets/gfx-portfolio.png"
+              alt="GFX portfolio preview"
+              loading="lazy"
+            />
             <h3>gfx-portfolio</h3>
             <p>
-              portfolio website I designed and developed for my friend to showcase his creative work and professional services. The site features a clean, modern layout, smooth scroll animations, and a fully mobile-friendly design — built using React, CSS, and AOS for animation effects.
+              Portfolio site designed and developed for a friend to showcase
+              creative work — clean layout, smooth scroll animations, built with
+              React, CSS, and AOS.
             </p>
           </a>
+
           <a
             href="https://arafay0001.github.io/Law-Associate/"
             target="_blank"
+            rel="noopener"
             class="project-card"
           >
-            <img src="./assets/law- assoiate.png" alt="Law-Associate Preview" />
-            <h3>Law-Associate</h3>
+            <img
+              src="./assets/law- assoiate.png"
+              alt="Law Associate preview"
+              loading="lazy"
+            />
+            <h3>Law Associate</h3>
             <p>
-              A clean and professional law associate website created to practice
-              responsive design and scroll-triggered animations. Focused on
-              elegant layout, smooth transitions, and modern UI interactions
-              using HTML, CSS, and JavaScript.
+              A clean, professional law firm site built to practice responsive
+              design and scroll-triggered animations with HTML, CSS, and
+              JavaScript.
             </p>
           </a>
 
           <a
             href="https://arafay0001.github.io/BLog-web/"
             target="_blank"
+            rel="noopener"
             class="project-card"
           >
-            <img src="./assets/Blog-Web.png" alt="Blog Web Preview" />
+            <img
+              src="./assets/Blog-Web.png"
+              alt="Blog Web preview"
+              loading="lazy"
+            />
             <h3>Blog Web</h3>
             <p>
-              A pseudo blog platform where users can sign up, log in, and upload
-              blog posts using local storage. It simulates real blog
-              functionality with user authentication and content management —
-              built with HTML, CSS, and JavaScript.
+              A pseudo blog platform with sign-up, log-in, and post uploads via
+              local storage — simulated auth and content management with HTML,
+              CSS, and JavaScript.
             </p>
           </a>
         </div>
@@ -197,6 +311,7 @@ Passionate about building responsive, user-friendly, and scalable web applicatio
 
       <!-- CONTACT SECTION -->
       <section id="contact">
+        <p class="eyebrow">$ contact</p>
         <h2 class="section-title">Get in Touch</h2>
         <p>
           If you'd like to collaborate, have a question, or just say hi, feel
@@ -204,37 +319,54 @@ Passionate about building responsive, user-friendly, and scalable web applicatio
         </p>
 
         <div class="contact-links">
-          <a href="./assets/Abdul_Rafay_CV.pdf" target="_blank"  class="btn"
-            >📃 Download Resume</a
-          >
-          <a href="https://github.com/ARafay0001" target="_blank" class="btn"
-            >💻 GitHub</a
-          >
           <a
-            href="https://www.linkedin.com/in/abdul-rafay-imran0001"
+            href="./assets/Abdul_Rafay_CV.pdf"
             target="_blank"
+            class="btn btn-primary"
+          >
+            <i class="fa-solid fa-file-arrow-down"></i> Resume
+          </a>
+          <a
+            href="https://github.com/ARafay0001"
+            target="_blank"
+            rel="noopener"
             class="btn"
-            >🔗 LinkedIn</a
           >
-          <a href="https://wa.me/923253583010" target="_blank" class="btn"
-            >💬 What'sapp</a
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/abdulrafaywebdev"
+            target="_blank"
+            rel="noopener"
+            class="btn"
           >
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a
+            href="https://wa.me/923253583010"
+            target="_blank"
+            rel="noopener"
+            class="btn"
+          >
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
         </div>
 
-        <p class="email" style="margin-top: 20px">
+        <p class="email">
           <strong>Email:</strong>
-          <a
-            href="mailto:abdulrafayimran4@gmail.com"
-            style="color: #00ff88; text-decoration: none"
+          <a href="mailto:abdulrafayimran4@gmail.com"
             >abdulrafayimran4@gmail.com</a
           >
         </p>
       </section>
-    </div>
+    </main>
 
-    <footer>“Building ideas into reality, one line of code at a time.”.</footer>
+    <footer>
+      <p>“Building ideas into reality, one line of code at a time.”</p>
+      <p class="mono">© 2026 Abdul Rafay</p>
+    </footer>
 
     <!-- Particle Background -->
-    <canvas id="bg"></canvas>
+    <canvas id="bg" aria-hidden="true"></canvas>
   </body>
 </html>
